@@ -1,9 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class ARFoundationHelperSettings : ScriptableObject
+namespace ARFoundationHelper.Scripts
 {
-    public string GeneratedLibrarySavePath = "Assets/ARFoundationHelper/GeneratedLibrary/auto-image-lib.asset";
-    public Material DefaultImageTrackerMaterial;
+    public class ARFoundationHelperSettings : ScriptableObject
+    {
+        [FormerlySerializedAs("GeneratedLibrarySavePath")] 
+        public string generatedLibrarySavePath = "Assets/ARFoundationHelper/GeneratedLibrary/auto-image-lib.asset";
+        [FormerlySerializedAs("DefaultImageTrackerMaterial")] 
+        public Material defaultImageTrackerMaterial;
+     }
 }

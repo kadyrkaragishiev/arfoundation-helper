@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using ARFoundationHelper.Scripts;
 using UnityEngine;
 
-public class PlayAnimationOnOffTracking : NYImageTrackerEventHandler
+namespace _Demo.Scripts
 {
-    public Animator targetAnim;
-
-    public string onFoundAnimName;
-    public string onLostAnimName;
-
-    public override void OnTrackingFound()
+    public class PlayAnimationOnOffTracking : NyImageTrackerEventHandler
     {
-        targetAnim.Play(onFoundAnimName);
-    }
+        public Animator targetAnim;
 
-    public override void OnTrackingLost()
-    {
-        targetAnim.Play(onLostAnimName);
+        public string onFoundAnimName;
+        public string onLostAnimName;
+
+        public override void OnTrackingFound() => targetAnim.Play(onFoundAnimName);
+
+        public override void OnTrackingLost() => targetAnim.Play(onLostAnimName);
     }
 }
